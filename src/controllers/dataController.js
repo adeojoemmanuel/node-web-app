@@ -5,3 +5,9 @@ exports.addData = (req, res) => {
   dataService.storeData(data);
   res.json({ message: 'Data stored successfully' });
 };
+
+exports.getData = (req, res) => {
+  dataService.getData((data) => {
+    res.json(data);
+  });
+};
